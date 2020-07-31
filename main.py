@@ -1,4 +1,7 @@
-import serialize, json
+import serialize
+import calendar_manage
+import json
+import os
 
 def find_next_contest(li):
 	l = 0
@@ -22,10 +25,14 @@ def find_next_contest(li):
 
 def main():
 
-	serialize.create_contest_details_json()
+	if(not os.path.exists(os.path.join(".", "assets", "token.pkl"))):
+		calendar_manage.oauth_setup()
+
+	#Uncomment below line to update contest_details.json
+	#serialize.create_contest_details_json()
 	
 	try:
-		with open("./assets/contests_details.json", "r") as f:
+		with open(serialize.json_file_path, "r") as f:
 			data = json.load(f)
 			#print(data["result"])
 			idx = find_next_contest(data["result"])
@@ -35,12 +42,15 @@ def main():
 			else:
 				contest = data["result"][idx]
 				print(contest)
-
+				
 	except FileNotFoundError:
 		print("contests_details.json file is not present inside assets directory")
 
 	finally:
 		pass
+
+	calendar_manage.create_event()
+
 
 
 
