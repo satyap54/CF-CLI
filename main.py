@@ -29,7 +29,7 @@ def main():
 		calendar_manage.oauth_setup()
 
 	#Uncomment below line to update contest_details.json
-	#serialize.create_contest_details_json()
+	serialize.create_contest_details_json()
 	
 	try:
 		with open(serialize.json_file_path, "r") as f:
