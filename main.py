@@ -41,17 +41,14 @@ def main():
 				print("No upcoming contests")
 			else:
 				contest = data["result"][idx]
-				print(contest)
+				print(json.dumps(contest))
+				calendar_manage.create_event(contest)
 				
 	except FileNotFoundError:
 		print("contests_details.json file is not present inside assets directory")
 
 	finally:
 		pass
-
-	calendar_manage.create_event()
-
-
 
 
 if __name__ == "__main__":
