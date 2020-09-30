@@ -1,0 +1,38 @@
+{% load static from staticfiles %}
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
+</head>
+<body>
+	<body>    
+    <h2>Enter Contest Details to Set Reminder!</h2><br>    
+    <div class="login"> 
+    <div class="login-form">
+    	<form id="login" method="get" action="login.php">    
+	        <label><b>Contest Name
+	        </b>    
+	        </label>    
+	        <br><br>
+	        <label><b>Contest Type 
+	        </b>    
+	        </label>  
+	        <br><br>
+	        <label><b>Contest Duration 
+	        </b>    
+	        </label>   
+	        <br><br>    
+	        <input type="button" name="log" id="log" value="Set Reminder" onclick="validate()">       
+	    </form>     
+    </div>   
+</div>  
+<script type="text/javascript">
+	function validate() {
+		window.location = "/home";
+	}
+</script>  
+</body>
+</body>
+</html>
