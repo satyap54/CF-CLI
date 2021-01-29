@@ -14,7 +14,7 @@ def remind():
 @main.command()
 @click.argument("users", nargs = -1)
 def users(users):
-	""" Gives information about one user """
+	""" Gives information about one user or several users"""
 	response = user_data(users)
 	print("\tStatus :", response.status_code, response.reason, "\n")
 	data = json.loads(response.text)
