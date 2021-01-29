@@ -42,5 +42,5 @@ cf --help
 
 ## To Do
 
- - Converting this into a full-fledged CLI
+ - contest_data method in cli.py
  - Better printing and formatting
