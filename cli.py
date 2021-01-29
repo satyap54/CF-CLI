@@ -1,6 +1,7 @@
 import click,json
 from set_reminder import set_reminder
 from user_data import user_data
+from contest_data import contest_data
 
 @click.group()
 def main():
@@ -26,3 +27,11 @@ def users(users):
 			print("Max. Rank: ", user_ob["maxRank"])
 			print(f'Friend of {user_ob["friendOfCount"]} users')
 			print("\n")
+
+@main.command()
+@click.argument("contest", args = 1)
+def contest(contest):
+	""" Gives the number of problems and their difficulty in a contest """
+	response = contest_data(contest)
+	print("\tStatus :", response.status_code, response.reason, "\n")
+	data = json.loads(response.text)
