@@ -31,6 +31,7 @@ pip install json
 
 ### Executing program
 ```
+git clone <this-repo>
 cd CF-Contest_Reminder-master/
 python main.py
 ```
