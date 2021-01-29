@@ -10,6 +10,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        cf = cli:cli
+        cf =cli:main
     ''',    
 )
