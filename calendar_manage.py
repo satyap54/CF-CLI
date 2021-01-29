@@ -1,22 +1,36 @@
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
 import os
 import pickle
 import json
 from datetime import datetime, timedelta
 
 def oauth_setup():
-	scopes = ["https://www.googleapis.com/auth/calendar.events", 
+	SCOPES = ["https://www.googleapis.com/auth/calendar.events", 
 	"https://www.googleapis.com/auth/calendar.readonly"]
 
-	#path to client auth token
-	path = os.path.join(".", "assets", "client_secret.json")
-	flow = InstalledAppFlow.from_client_secrets_file(path, scopes = scopes)
+	creds = None
+	token_path = os.path.join(".", "assets", "token.pkl")
+	cred_json_path = os.path.join(".", "assets", "credentials.json")
 
-	credentials = flow.run_console()
-
-	with open(os.path.join(".", "assets", "token.pkl"), "wb") as f:
-		pickle.dump(credentials, f)
+	# The file token.pickle stores the user's access and refresh tokens, and is
+	# created automatically when the authorization flow completes for the first
+	# time.
+	if os.path.exists(token_path):
+		with open(token_path, 'rb') as token:
+			creds = pickle.load(token)
+	# If there are no (valid) credentials available, let the user log in.
+	if not creds or not creds.valid:
+		if creds and creds.expired and creds.refresh_token:
+			creds.refresh(Request())
+		else:
+			flow = InstalledAppFlow.from_client_secrets_file(
+				cred_json_path, SCOPES)
+			creds = flow.run_local_server(port=0)
+		# Save the credentials for the next run
+		with open(token_path, 'wb') as token:
+			pickle.dump(creds, token)
 
 def create_event(contest):
 	credentials = pickle.load(open(os.path.join(".", "assets", "token.pkl"), "rb"))
