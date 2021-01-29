@@ -36,7 +36,8 @@ pip install click
 ```
 git clone <this-repo>
 cd CF-Contest_Reminder-master/
-python main.py
+pip install --editable
+cf --reminder
 ```
 
 ## To Do
