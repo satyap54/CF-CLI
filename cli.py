@@ -24,4 +24,5 @@ def users(users):
 			print("Current Rating: ",user_ob["rating"])
 			print("Max. Rating: ", user_ob["maxRating"])
 			print("Max. Rank: ", user_ob["maxRank"])
+			print(f'Friend of {user_ob["friendOfCount"]} users')
 			print("\n")
