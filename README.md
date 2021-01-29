@@ -27,6 +27,9 @@ pip install pickle
 ```
 pip install json
 ```
+```
+pip install click
+```
 
 
 ### Executing program
