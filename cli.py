@@ -29,7 +29,7 @@ def users(users):
 			print("\n")
 
 @main.command()
-@click.argument("contest", args = 1)
+@click.argument("contest", nargs = 1)
 def contest(contest):
 	""" Gives the number of problems and their difficulty in a contest """
 	response = contest_data(contest)
