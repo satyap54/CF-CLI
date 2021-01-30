@@ -1,5 +1,6 @@
 
 
+
 # CodeForces Contest Reminder
 Aimed at fetching information on CodeForces from the comfort of terminal.
 
@@ -40,6 +41,8 @@ pip install --editable
 cf --help
 ```
 
+### Screenshot
+![enter image description here](https://github.com/satyap54/CF-Contest_Reminder/blob/master/assets/CF-Cli.png?raw=true)
 ## To Do
 
  - contest_data method in cli.py
