@@ -21,7 +21,11 @@ def users(users):
 	data = json.loads(response.text)
 	if(response.ok):
 		for user_ob in data["result"]:
-			print(f'{user_ob["firstName"]} {user_ob["lastName"]} aka {user_ob["handle"]}')
+			if(not "first_name" in user_ob):
+				print(user_ob["handle"])
+			else:
+				print(f'{user_ob["firstName"]} {user_ob["lastName"]} aka {user_ob["handle"]}')
+				
 			print("Current Rating: ",user_ob["rating"])
 			print("Max. Rating: ", user_ob["maxRating"])
 			print("Max. Rank: ", user_ob["maxRank"])
