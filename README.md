@@ -42,7 +42,7 @@ cf --help
 ```
 
 ### Screenshot
-![enter image description here](https://github.com/satyap54/CF-Contest_Reminder/blob/master/assets/CF-Cli.png?raw=true)
+![enter image description here](https://github.com/satyap54/CF-Contest_Reminder/blob/master/assets/CF-Cli-v2.png?raw=true)
 ## To Do
 
  - contest_data method in cli.py
