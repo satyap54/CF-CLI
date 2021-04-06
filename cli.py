@@ -1,4 +1,5 @@
 import click,json
+from tabulate import tabulate
 from set_reminder import set_reminder
 from user_data import user_data
 from contest_data import contest_data
@@ -19,18 +20,24 @@ def users(users):
 	response = user_data(users)
 	print("\tStatus :", response.status_code, response.reason, "\n")
 	data = json.loads(response.text)
+	data_list = []
 	if(response.ok):
 		for user_ob in data["result"]:
+			li = []
 			if(not "first_name" in user_ob):
-				print(user_ob["handle"])
+				li.append(user_ob["handle"])
 			else:
-				print(f'{user_ob["firstName"]} {user_ob["lastName"]} aka {user_ob["handle"]}')
+				li.append(f'{user_ob["firstName"]} {user_ob["lastName"]} aka {user_ob["handle"]}')
 				
-			print("Current Rating: ",user_ob["rating"])
-			print("Max. Rating: ", user_ob["maxRating"])
-			print("Max. Rank: ", user_ob["maxRank"])
-			print(f'Friend of {user_ob["friendOfCount"]} users')
-			print("\n")
+			li.append(user_ob["rating"])
+			li.append(user_ob["maxRating"])
+			li.append(user_ob["maxRank"])
+			li.append(f'Friend of {user_ob["friendOfCount"]} users')
+
+			data_list.append(li)
+	
+	headers = ["User", "Current Rating", "Max. Rating", "Max. Rank:", "Social"]
+	print(tabulate(data_list, headers=headers))
 
 @main.command()
 @click.argument("contest", nargs = 1)
