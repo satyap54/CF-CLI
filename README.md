@@ -1,7 +1,7 @@
 
 
 
-# CodeForces Contest Reminder
+# CodeForces CLI
 Aimed at fetching information on CodeForces from the comfort of terminal.
 
 A cli-tool made using python which is capable of setting reminder for the next CodeForces Round in your Google Calendar. Currently, I'm trying to add feature of fetching some publicly available information on CodeForces.
