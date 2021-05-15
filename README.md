@@ -9,7 +9,7 @@ A cli-tool made using python which is capable of setting reminder for the next C
 
 ## Getting Started
 
-### Installing
+### Installation
 
 * Enable Google Calendar API by going here : https://developers.google.com/calendar/quickstart/python
 This will generate a "credentials.json".
