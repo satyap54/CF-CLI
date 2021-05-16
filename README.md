@@ -33,7 +33,7 @@ pip install click
 ```
 
 
-### Executing program
+### Run
 ```
 git clone <this-repo>
 cd CF-Contest_Reminder-master/
