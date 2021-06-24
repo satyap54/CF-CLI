@@ -41,6 +41,8 @@ Place your codeforces handle and password in config.py in order to submit code.
 
 ### Screenshot
 ![enter image description here](https://github.com/satyap54/CF-Contest_Reminder/blob/master/assets/CF-Cli-v2.png?raw=true)
+
+![enter image description here](https://github.com/satyap54/CF-CLI/blob/master/assets/Screenshot%20from%202021-06-25%2001-00-29.png)
 ## To Do
 
  - contest_data method in cli.py
