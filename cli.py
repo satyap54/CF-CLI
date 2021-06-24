@@ -6,6 +6,7 @@ from user_data import user_data, get_latest_verdict
 from contest_data import contest_data
 from robobrowser import RoboBrowser
 import time
+import config
 
 
 _verdict_unexpected = set(("REJECTED", "INPUT_PREPARATION_CRASHED", "CRASHED", "SECURITY_VIOLATED", "PRESENTATION_ERROR",
@@ -69,8 +70,8 @@ def submit(contest_id, problem_id, file_name):
 	browser.open('http://codeforces.com/enter')	
 
 	enter_form = browser.get_form('enterForm')
-	enter_form["handleOrEmail"] = "KatZura"
-	enter_form["password"] = "ydemtr,123"
+	enter_form["handleOrEmail"] = config.USER_HANDLE
+	enter_form["password"] = config.PASSWORD
 
 	res = browser.submit_form(enter_form)
 	enter_form = browser.get_form('enterForm')
@@ -96,7 +97,7 @@ def submit(contest_id, problem_id, file_name):
 
 	final_res = None
 	while True:
-		res = get_latest_verdict("KatZura")
+		res = get_latest_verdict(config.USER_HANDLE)
 		if(res['verdict'] in _verdict_end):
 			final_res = res
 			break
