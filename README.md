@@ -4,7 +4,7 @@
 # CodeForces CLI
 Aimed at fetching information on CodeForces from the comfort of terminal.
 
-A cli-tool made using python which is capable of setting reminder for the next CodeForces Round in your Google Calendar. Currently, I'm trying to add feature of fetching some publicly available information on CodeForces.
+A cli-tool made using python which is capable of setting reminder for the next CodeForces Round in your Google Calendar. You can also submit solution files from terminal. Currently, I'm trying to add feature of fetching some publicly available information on CodeForces.
 
 
 ## Getting Started
@@ -43,4 +43,4 @@ cf --help
 ## To Do
 
  - contest_data method in cli.py
- - Better printing and formatting
+ - config file for storing hashed password
