@@ -37,7 +37,7 @@ pip install --editable .
 ```
 cf --help
 ```
-Place your codeforces handle and password in config.py in order to submit code.
+* Place your codeforces handle and password in config.py in order to submit code.
 
 ### Screenshot
 ![enter image description here](https://github.com/satyap54/CF-Contest_Reminder/blob/master/assets/CF-Cli-v2.png?raw=true)
