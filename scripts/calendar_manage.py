@@ -11,8 +11,8 @@ def oauth_setup():
 	"https://www.googleapis.com/auth/calendar.readonly"]
 
 	creds = None
-	token_path = os.path.join(".", "assets", "token.pkl")
-	cred_json_path = os.path.join(".", "assets", "credentials.json")
+	token_path = os.path.join("..", "assets", "token.pkl")
+	cred_json_path = os.path.join("..", "assets", "credentials.json")
 
 	# The file token.pickle stores the user's access and refresh tokens, and is
 	# created automatically when the authorization flow completes for the first
@@ -33,7 +33,7 @@ def oauth_setup():
 			pickle.dump(creds, token)
 
 def create_event(contest):
-	credentials = pickle.load(open(os.path.join(".", "assets", "token.pkl"), "rb"))
+	credentials = pickle.load(open(os.path.join("..", "assets", "token.pkl"), "rb"))
 	service = build("calendar", "v3", credentials = credentials)
 
 	#result = service.calendarList().list().execute()

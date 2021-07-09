@@ -2,7 +2,7 @@ import requests as rq
 import json
 import os
 
-json_file_path = os.path.join(".", "assets", "contests_details.json")
+json_file_path = os.path.join("..", "assets", "contests_details.json")
 
 def create_contest_details_json(include_gym = "false", usr_token = None):
 	"""Create a JSON file containing details of upcoming contests"""
