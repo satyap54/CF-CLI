@@ -1,9 +1,9 @@
 import click,json
 from click import parser
 from tabulate import tabulate
-from set_reminder import set_reminder
-from user_data import user_data, get_latest_verdict
-from contest_data import contest_data
+from scripts.set_reminder import set_reminder
+from scripts.user_data import user_data, get_latest_verdict
+from scripts.contest_data import contest_data
 from robobrowser import RoboBrowser
 import time
 import config
