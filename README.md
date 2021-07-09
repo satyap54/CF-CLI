@@ -16,11 +16,6 @@ This will generate a "credentials.json".
 * Place your "credentials.json" inside "assets" of project directory.
 
 
-```
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-```
-
-
 ### Run
 ```
 git clone <this-repo>
@@ -28,6 +23,8 @@ git clone <this-repo>
 ```
 cd CF-Contest_Reminder-master/
 ```
+
+I recommended to create a python virtualenv to install all the necessary modules.
 ```
 pip install -r requirements.txt
 ```
