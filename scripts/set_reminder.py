@@ -25,7 +25,6 @@ def find_next_contest(li):
 		return res
 
 def set_reminder():
-
 	if(not os.path.exists(os.path.join("..", "assets", "token.pkl"))):
 		calendar_manage.oauth_setup()
 
